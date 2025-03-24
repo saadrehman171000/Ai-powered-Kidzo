@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  padding: 2rem;
+  background-color: var(--background);
+}
+
+.signUpBox {
+  width: 100%;
+  max-width: 480px;
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.headerTitle {
+  color: var(--foreground);
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.headerSubtitle {
+  color: var(--muted-foreground);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.socialButton {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.socialButton:hover {
+  background-color: var(--secondary-hover);
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+  background-color: var(--primary-hover);
+}
+
+.footerText {
+  text-align: center;
+  color: var(--muted-foreground);
+  margin-top: 1rem;
+}
+
+.footerLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+} 

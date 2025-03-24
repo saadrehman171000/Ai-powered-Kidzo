@@ -1,0 +1,233 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--foreground);
+  }
+  
+  .ordersList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .orderCard {
+    background-color: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+  
+  .orderHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .orderId {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
+  .orderDate {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-top: 0.25rem;
+  }
+  
+  .orderStatus {
+    display: flex;
+    align-items: center;
+  }
+  
+  .status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .processing {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .shipped {
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+  
+  .delivered {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .cancelled {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+  
+  .orderItems {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .orderItem {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .orderItem:last-child {
+    margin-bottom: 0;
+  }
+  
+  .itemImage {
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .itemDetails {
+    flex: 1;
+  }
+  
+  .itemName {
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.25rem;
+  }
+  
+  .itemPrice {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+  }
+  
+  .orderFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+  
+  .orderTotal {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .totalAmount {
+    color: var(--primary);
+  }
+  
+  .orderActions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .viewDetailsBtn,
+  .downloadInvoiceBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  
+  .viewDetailsBtn {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+  }
+  
+  .viewDetailsBtn:hover {
+    background-color: var(--secondary-hover);
+  }
+  
+  .downloadInvoiceBtn {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .downloadInvoiceBtn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .notLoggedIn,
+  .noOrders,
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+  
+  .notLoggedIn h1,
+  .noOrders h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--foreground);
+  }
+  
+  .notLoggedIn p,
+  .noOrders p {
+    color: var(--muted-foreground);
+    margin-bottom: 2rem;
+  }
+  
+  .loginBtn,
+  .shopNowBtn {
+    padding: 0.75rem 2rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  
+  .loginBtn:hover,
+  .shopNowBtn:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .loading {
+    font-size: 1.2rem;
+    color: var(--muted-foreground);
+  }
+  
+  @media (max-width: 768px) {
+    .orderHeader,
+    .orderFooter {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .orderActions {
+      width: 100%;
+    }
+  
+    .viewDetailsBtn,
+    .downloadInvoiceBtn {
+      flex: 1;
+      text-align: center;
+    }
+  }
+  
+  

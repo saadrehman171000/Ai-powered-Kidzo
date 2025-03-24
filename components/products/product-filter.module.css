@@ -1,0 +1,131 @@
+.filterContainer {
+    padding: 1.5rem;
+    background-color: var(--card);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .filterTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: var(--foreground);
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  
+  .filterTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-hover) 100%);
+    border-radius: 3px;
+  }
+  
+  .categoryList {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+  }
+  
+  .categoryItem {
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryButton {
+    width: 100%;
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    color: var(--foreground);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .categoryButton:hover {
+    background-color: var(--secondary);
+    color: var(--primary);
+  }
+  
+  .categoryButton.active {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 500;
+  }
+  
+  .priceFilter {
+    margin-top: 1.5rem;
+  }
+  
+  .priceInputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .priceInput {
+    flex: 1;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  
+  .priceInput:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  .priceSeparator {
+    font-weight: 600;
+    color: var(--muted-foreground);
+  }
+  
+  .applyButton {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    color: var(--primary-foreground);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .applyButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .filterContainer {
+      padding: 1rem;
+    }
+  
+    .categoryList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .categoryItem {
+      margin-bottom: 0;
+    }
+  
+    .categoryButton {
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+    }
+  }
+  
+  
