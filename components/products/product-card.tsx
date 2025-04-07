@@ -1,7 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import type { Product } from "@/types"
-import styles from "./product-card.module.css"
+import Link from "next/link";
+import Image from "next/image";
+import type { Product } from "@/types";
+import styles from "./product-card.module.css";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
@@ -14,7 +14,9 @@ export default function ProductCard({ product }: { product: Product }) {
           height={300}
           className={styles.image}
         />
-        {!product.inStock && <div className={styles.outOfStock}>Out of Stock</div>}
+        {!product.inStock && (
+          <div className={styles.outOfStock}>Out of Stock</div>
+        )}
       </div>
 
       <div className={styles.content}>
@@ -24,7 +26,12 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <div className={styles.rating}>
           {Array.from({ length: 5 }).map((_, i) => (
-            <span key={i} className={i < Math.floor(product.rating) ? styles.starFilled : styles.star}>
+            <span
+              key={i}
+              className={
+                i < Math.floor(product.rating) ? styles.starFilled : styles.star
+              }
+            >
               ★
             </span>
           ))}
@@ -34,6 +41,5 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className={styles.price}>${product.price.toFixed(2)}</div>
       </div>
     </Link>
-  )
+  );
 }
-

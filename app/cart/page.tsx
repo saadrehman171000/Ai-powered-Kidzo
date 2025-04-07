@@ -1,39 +1,42 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { useCart } from "@/context/cart-context"
-import styles from "./cart.module.css"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { useCart } from "@/context/cart-context";
+import styles from "./cart.module.css";
 
 export default function CartPage() {
-  const { cart, updateQuantity, removeFromCart, clearCart } = useCart()
-  const [subtotal, setSubtotal] = useState(0)
-  const [shipping, setShipping] = useState(0)
-  const [total, setTotal] = useState(0)
+  const { cart, updateQuantity, removeFromCart, clearCart } = useCart();
+  const [subtotal, setSubtotal] = useState(0);
+  const [shipping, setShipping] = useState(0);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     // Calculate subtotal
-    const newSubtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
-    setSubtotal(newSubtotal)
+    const newSubtotal = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    setSubtotal(newSubtotal);
 
     // Calculate shipping (free over $50)
-    const newShipping = newSubtotal > 50 ? 0 : 5.99
-    setShipping(newShipping)
+    const newShipping = newSubtotal > 50 ? 0 : 5.99;
+    setShipping(newShipping);
 
     // Calculate total
-    setTotal(newSubtotal + newShipping)
-  }, [cart])
+    setTotal(newSubtotal + newShipping);
+  }, [cart]);
 
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity > 0) {
-      updateQuantity(id, newQuantity)
+      updateQuantity(id, newQuantity);
     }
-  }
+  };
 
   const handleRemove = (id: string) => {
-    removeFromCart(id)
-  }
+    removeFromCart(id);
+  };
 
   if (cart.length === 0) {
     return (
@@ -44,7 +47,7 @@ export default function CartPage() {
           Shop Now
         </Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -85,24 +88,33 @@ export default function CartPage() {
                 <div className={styles.quantityControl}>
                   <button
                     className={styles.quantityBtn}
-                    onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                    onClick={() =>
+                      handleQuantityChange(item.id, item.quantity - 1)
+                    }
                   >
                     -
                   </button>
                   <span className={styles.quantity}>{item.quantity}</span>
                   <button
                     className={styles.quantityBtn}
-                    onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                    onClick={() =>
+                      handleQuantityChange(item.id, item.quantity + 1)
+                    }
                   >
                     +
                   </button>
                 </div>
               </div>
 
-              <div className={styles.totalCol}>${(item.price * item.quantity).toFixed(2)}</div>
+              <div className={styles.totalCol}>
+                ${(item.price * item.quantity).toFixed(2)}
+              </div>
 
               <div className={styles.actionCol}>
-                <button className={styles.removeBtn} onClick={() => handleRemove(item.id)}>
+                <button
+                  className={styles.removeBtn}
+                  onClick={() => handleRemove(item.id)}
+                >
                   ×
                 </button>
               </div>
@@ -124,7 +136,9 @@ export default function CartPage() {
           </div>
 
           {subtotal < 50 && (
-            <div className={styles.freeShippingNote}>Add ${(50 - subtotal).toFixed(2)} more to get FREE shipping!</div>
+            <div className={styles.freeShippingNote}>
+              Add ${(50 - subtotal).toFixed(2)} more to get FREE shipping!
+            </div>
           )}
 
           <div className={styles.summaryTotal}>
@@ -146,6 +160,5 @@ export default function CartPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

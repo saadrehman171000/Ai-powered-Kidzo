@@ -1,70 +1,81 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import styles from "./banner.module.css"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "./banner.module.css";
 
 interface Slide {
-  id: number
-  title: string
-  description: string
-  imageUrl: string
-  link: string
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  link: string;
 }
 
 export default function Banner() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides: Slide[] = [
     {
       id: 1,
       title: "Summer Collection 2025",
-      description: "Discover our new range of lightweight and breathable baby clothes perfect for summer.",
-      imageUrl: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=1920&fit=crop",
+      description:
+        "Discover our new range of lightweight and breathable baby clothes perfect for summer.",
+      imageUrl:
+        "https://images.unsplash.com/photo-1533483595632-c5f0e57a1936?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       link: "/products?category=clothing",
     },
     {
       id: 2,
       title: "Organic Baby Toiletries",
-      description: "Gentle, natural, and safe products for your baby's delicate skin.",
-      imageUrl: "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=1920&fit=crop",
+      description:
+        "Gentle, natural, and safe products for your baby's delicate skin.",
+      imageUrl:
+        "https://media.istockphoto.com/id/1199521138/photo/set-of-childrens-clothes-for-boy-on-grey-background.jpg?s=612x612&w=0&k=20&c=yAouVJBPW-tbCPExYSj3sJs9uhvft1n0GgXGyyAEgso=",
       link: "/products?category=toiletries",
     },
     {
       id: 3,
       title: "Premium Feeding Accessories",
-      description: "Make feeding time easier with our range of high-quality accessories.",
-      imageUrl: "https://images.unsplash.com/photo-1611175694989-4870fafa4494?q=80&w=1920&fit=crop",
+      description:
+        "Make feeding time easier with our range of high-quality accessories.",
+      imageUrl:
+        "https://images.unsplash.com/photo-1672863243267-37732e111b28?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       link: "/products?category=feeding",
     },
-  ]
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-    }, 5000)
+      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
 
-    return () => clearInterval(interval)
-  }, [slides.length])
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
+    setCurrentSlide(index);
+  };
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
-  }
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
-  }
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
   return (
     <div className={styles.banner}>
       <div className={styles.slider}>
         {slides.map((slide, index) => (
-          <div key={slide.id} className={`${styles.slide} ${index === currentSlide ? styles.active : ""}`}>
+          <div
+            key={slide.id}
+            className={`${styles.slide} ${
+              index === currentSlide ? styles.active : ""
+            }`}
+          >
             <div className={styles.imageContainer}>
               <Image
                 src={slide.imageUrl || "/placeholder.svg"}
@@ -85,10 +96,18 @@ export default function Banner() {
         ))}
       </div>
 
-      <button className={`${styles.navButton} ${styles.prev}`} onClick={prevSlide} aria-label="Previous slide">
+      <button
+        className={`${styles.navButton} ${styles.prev}`}
+        onClick={prevSlide}
+        aria-label="Previous slide"
+      >
         &#10094;
       </button>
-      <button className={`${styles.navButton} ${styles.next}`} onClick={nextSlide} aria-label="Next slide">
+      <button
+        className={`${styles.navButton} ${styles.next}`}
+        onClick={nextSlide}
+        aria-label="Next slide"
+      >
         &#10095;
       </button>
 
@@ -96,13 +115,14 @@ export default function Banner() {
         {slides.map((_, index) => (
           <span
             key={index}
-            className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ""}`}
+            className={`${styles.dot} ${
+              index === currentSlide ? styles.activeDot : ""
+            }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           ></span>
         ))}
       </div>
     </div>
-  )
+  );
 }
-

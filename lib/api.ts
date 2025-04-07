@@ -1,11 +1,12 @@
-import type { Product, Review, Order } from "@/types"
+import type { Product, Review, Order } from "@/types";
 
 // Mock data for products
 const mockProducts: Product[] = [
   {
     id: "1",
     name: "Organic Baby Shampoo",
-    description: "Gentle, tear-free formula made with organic ingredients for your baby's delicate skin and hair.",
+    description:
+      "Gentle, tear-free formula made with organic ingredients for your baby's delicate skin and hair.",
     price: 12.99,
     category: "toiletries",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -36,7 +37,8 @@ const mockProducts: Product[] = [
   {
     id: "2",
     name: "Baby Bottle Set",
-    description: "Set of 3 BPA-free baby bottles with anti-colic system and natural-feel nipples.",
+    description:
+      "Set of 3 BPA-free baby bottles with anti-colic system and natural-feel nipples.",
     price: 24.99,
     category: "feeding",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -59,7 +61,8 @@ const mockProducts: Product[] = [
   {
     id: "3",
     name: "Soft Baby Carrier",
-    description: "Ergonomic baby carrier with adjustable straps and breathable fabric for comfort.",
+    description:
+      "Ergonomic baby carrier with adjustable straps and breathable fabric for comfort.",
     price: 49.99,
     category: "wearing",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -73,7 +76,8 @@ const mockProducts: Product[] = [
   {
     id: "4",
     name: "Baby Nest Lounger",
-    description: "Portable and lightweight baby nest for lounging, tummy time, and supervised napping.",
+    description:
+      "Portable and lightweight baby nest for lounging, tummy time, and supervised napping.",
     price: 39.99,
     category: "nests",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -87,7 +91,8 @@ const mockProducts: Product[] = [
   {
     id: "5",
     name: "Wooden Activity Gym",
-    description: "Sustainable wooden baby gym with detachable toys for sensory development.",
+    description:
+      "Sustainable wooden baby gym with detachable toys for sensory development.",
     price: 59.99,
     category: "toys",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -115,7 +120,8 @@ const mockProducts: Product[] = [
   {
     id: "7",
     name: "Silicone Baby Spoons",
-    description: "Set of 4 soft silicone spoons perfect for baby's first foods.",
+    description:
+      "Set of 4 soft silicone spoons perfect for baby's first foods.",
     price: 9.99,
     category: "feeding",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -129,7 +135,8 @@ const mockProducts: Product[] = [
   {
     id: "8",
     name: "Baby Wrap Carrier",
-    description: "Soft fabric wrap carrier for newborns and infants up to 35 lbs.",
+    description:
+      "Soft fabric wrap carrier for newborns and infants up to 35 lbs.",
     price: 34.99,
     category: "wearing",
     imageUrl: "/placeholder.svg?height=300&width=300",
@@ -140,7 +147,7 @@ const mockProducts: Product[] = [
     createdAt: "2023-03-18T00:00:00.000Z",
     reviews: [],
   },
-]
+];
 
 // Mock data for orders
 const mockOrders: Order[] = [
@@ -236,10 +243,10 @@ const mockOrders: Order[] = [
     createdAt: "2023-07-20T00:00:00.000Z",
     updatedAt: "2023-07-20T00:00:00.000Z",
   },
-]
+];
 
 // Add quality and fit parameters to Unsplash URLs
-const formatImageUrl = (url: string) => `${url}?q=80&w=1080&fit=crop`
+const formatImageUrl = (url: string) => `${url}?q=80&w=1080&fit=crop`;
 
 // API functions
 export const getAllProducts = async (): Promise<Product[]> => {
@@ -249,7 +256,9 @@ export const getAllProducts = async (): Promise<Product[]> => {
       id: "1",
       name: "Organic Cotton Onesie",
       price: 24.99,
-      imageUrl: formatImageUrl("https://images.unsplash.com/photo-1555252333-9f8e92e65df9"),
+      imageUrl:
+        "https://media.istockphoto.com/id/497613280/photo/wardrobe-with-baby-clothes-arranged-on-hangers.jpg?s=1024x1024&w=is&k=20&c=NUep36RtWOKVsAsLdSe9d0gSLZqnXAht5xXBMN3yFFs=".trim(),
+
       category: "clothing",
       salesCount: 1250,
       description: "Soft and comfortable organic cotton onesie for babies",
@@ -263,7 +272,12 @@ export const getAllProducts = async (): Promise<Product[]> => {
       id: "2",
       name: "Natural Baby Lotion",
       price: 19.99,
-      imageUrl: formatImageUrl("https://images.unsplash.com/photo-1523482580672-f109ba8cb9be"),
+      // imageUrl: formatImageUrl(
+      //   "https://images.unsplash.com/photo-1523482580672-f109ba8cb9be"
+      // ),
+
+      imageUrl:
+        "https://media.istockphoto.com/id/584574708/photo/soap-bar-and-liquid-shampoo-shower-gel-towels-spa-kit.jpg?s=2048x2048&w=is&k=20&c=useYEqF8ZvuV0fc04RXtC1HRMm4MMsPDa12uKHwd--I=".trim(),
       category: "toiletries",
       salesCount: 980,
       description: "Natural and gentle baby lotion",
@@ -277,7 +291,13 @@ export const getAllProducts = async (): Promise<Product[]> => {
       id: "3",
       name: "Silicone Feeding Set",
       price: 34.99,
-      imageUrl: formatImageUrl("https://images.unsplash.com/photo-1611175694989-4870fafa4494"),
+      // imageUrl: formatImageUrl(
+      //   "https://images.unsplash.com/photo-1611175694989-4870fafa4494"
+      // ),
+
+      imageUrl:
+        "https://media.istockphoto.com/id/1078095612/photo/pretty-baby-girl-drinks-water-from-bottle-lying-on-bed-child-weared-diaper-in-nursery-room.jpg?s=2048x2048&w=is&k=20&c=I_Sj35mRUcqAeC-433WVJkohbxwFWaHEYyzo2CpMAx8=".trim(),
+
       category: "feeding",
       salesCount: 856,
     },
@@ -285,11 +305,13 @@ export const getAllProducts = async (): Promise<Product[]> => {
       id: "4",
       name: "Wooden Activity Gym",
       price: 89.99,
-      imageUrl: formatImageUrl("https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4"),
+      imageUrl: formatImageUrl(
+        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4"
+      ),
       category: "toys",
       salesCount: 742,
     },
-  ].map(product => ({
+  ].map((product) => ({
     ...product,
     description: product.description || "Product description not available",
     inStock: product.inStock ?? true,
@@ -297,8 +319,8 @@ export const getAllProducts = async (): Promise<Product[]> => {
     reviewCount: product.reviewCount || 0,
     createdAt: product.createdAt || new Date().toISOString(),
     reviews: product.reviews || [],
-  }))
-}
+  }));
+};
 
 export const getProductById = async (id: string): Promise<Product> => {
   // This is mock data - replace with actual API call
@@ -306,8 +328,11 @@ export const getProductById = async (id: string): Promise<Product> => {
     id,
     name: "Organic Cotton Baby Onesie",
     price: 24.99,
-    description: "Super soft, 100% organic cotton onesie perfect for your baby's sensitive skin.",
-    imageUrl: formatImageUrl("https://images.unsplash.com/photo-1555252333-9f8e92e65df9"),
+    description:
+      "Super soft, 100% organic cotton onesie perfect for your baby's sensitive skin.",
+    imageUrl: formatImageUrl(
+      "https://images.unsplash.com/photo-1555252333-9f8e92e65df9"
+    ),
     category: "clothing",
     inStock: true,
     rating: 4.5,
@@ -324,45 +349,49 @@ export const getProductById = async (id: string): Promise<Product> => {
       },
     ],
     createdAt: new Date().toISOString(),
-  }
-}
+  };
+};
 
-export async function getProductsByCategory(category: string): Promise<Product[]> {
+export async function getProductsByCategory(
+  category: string
+): Promise<Product[]> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
-  return mockProducts.filter((p) => p.category === category)
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return mockProducts.filter((p) => p.category === category);
 }
 
 export async function getProductReviews(productId: string): Promise<Review[]> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
-  const product = mockProducts.find((p) => p.id === productId)
-  return product?.reviews || []
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  const product = mockProducts.find((p) => p.id === productId);
+  return product?.reviews || [];
 }
 
-export async function addProductReview(productId: string, review: Omit<Review, "id" | "date">): Promise<Review> {
+export async function addProductReview(
+  productId: string,
+  review: Omit<Review, "id" | "date">
+): Promise<Review> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
+  await new Promise((resolve) => setTimeout(resolve, 500));
 
   const newReview: Review = {
     id: `review-${Date.now()}`,
     ...review,
     date: new Date().toISOString(),
-  }
+  };
 
-  return newReview
+  return newReview;
 }
 
 export async function getUserOrders(userId: string): Promise<Order[]> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
-  return mockOrders.filter((order) => order.userId === userId)
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  return mockOrders.filter((order) => order.userId === userId);
 }
 
 export async function getOrderById(orderId: string): Promise<Order | null> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 500))
-  const order = mockOrders.find((o) => o.id === orderId)
-  return order || null
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  const order = mockOrders.find((o) => o.id === orderId);
+  return order || null;
 }
-
