@@ -20,7 +20,7 @@
   
   .chatHeader {
     padding: 1.5rem;
-    background-color: var(--primary);
+    background-color:#2f97a9;
     color: var(--primary-foreground);
   }
   
@@ -53,7 +53,7 @@
   
   .userMessage {
     align-self: flex-end;
-    background-color: var(--primary);
+    background-color: #2f97a9;
     color: var(--primary-foreground);
     border-bottom-right-radius: 0;
   }
@@ -129,12 +129,12 @@
   
   .input:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: #2f97a9;
   }
   
   .sendButton {
     padding: 0.75rem 1.5rem;
-    background-color: var(--primary);
+    background-color: #2f97a9;
     color: var(--primary-foreground);
     border: none;
     border-radius: 0 8px 8px 0;
@@ -144,7 +144,7 @@
   }
   
   .sendButton:hover {
-    background-color: var(--primary-hover);
+    background-color: #006779 ;
   }
   
   .sendButton:disabled {

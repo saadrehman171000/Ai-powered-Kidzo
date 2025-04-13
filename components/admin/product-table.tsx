@@ -7,20 +7,20 @@ import type { Product } from "@/types"
 import AddProductForm from "./add-product-form"
 import styles from "./product-table.module.css"
 
-const dummyProducts: Product[] = [
-  {
-    id: "1",
-    name: "Baby Stroller",
-    price: 299.99,
-    category: "Strollers",
-    inStock: true,
-    imageUrl: "/placeholder.png",
-    description: "Premium baby stroller with multiple features",
-    rating: 4.5,
-    reviewCount: 12,
-  },
-  // Add more dummy products here
-]
+// const dummyProducts: Product[] = [
+//   {
+//     id: "1",
+//     name: "Baby Stroller",
+//     price: 299.99,
+//     category: "Strollers",
+//     inStock: true,
+//     imageUrl: "/placeholder.png",
+//     description: "Premium baby stroller with multiple features",
+//     rating: 4.5,
+//     reviewCount: 12,
+//   },
+  
+// ]
 
 interface ProductTableProps {
   products: Product[];

@@ -73,7 +73,7 @@
   .button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    background: linear-gradient(135deg, #2f97a9 0%, #006779 100%);
     color: var(--primary-foreground);
     border-radius: 50px;
     font-weight: 600;

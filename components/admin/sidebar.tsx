@@ -22,17 +22,17 @@ export default function AdminSidebar() {
     { label: "Dashboard", href: "/admin", icon: "📊" },
     { label: "Orders", href: "/admin/orders", icon: "🛒" },
     { label: "Products", href: "/admin/products", icon: "📦" },
-    { label: "Customers", href: "/admin/customers", icon: "👥" },
-    {
-      label: "Settings",
-      href: "#",
-      icon: "⚙️",
-      submenu: [
-        { label: "General", href: "/admin/settings/general" },
-        { label: "Appearance", href: "/admin/settings/appearance" },
-        { label: "Notifications", href: "/admin/settings/notifications" },
-      ],
-    },
+    // { label: "Customers", href: "/admin/customers", icon: "👥" },
+    // {
+    //   label: "Settings",
+    //   href: "#",
+    //   icon: "⚙️",
+    //   submenu: [
+    //     { label: "General", href: "/admin/settings/general" },
+    //     { label: "Appearance", href: "/admin/settings/appearance" },
+    //     { label: "Notifications", href: "/admin/settings/notifications" },
+    //   ],
+    // },
   ]
 
   const toggleSubmenu = (label: string) => {

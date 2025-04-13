@@ -34,7 +34,7 @@ export default function ProductFilter({ onCategoryChange, selectedCategory }: Pr
         ))}
       </ul>
 
-      <div className={styles.priceFilter}>
+      {/* <div className={styles.priceFilter}>
         <h3 className={styles.filterTitle}>Price Range</h3>
         <div className={styles.priceInputs}>
           <input type="number" placeholder="Min" className={styles.priceInput} />
@@ -42,7 +42,7 @@ export default function ProductFilter({ onCategoryChange, selectedCategory }: Pr
           <input type="number" placeholder="Max" className={styles.priceInput} />
         </div>
         <button className={styles.applyButton}>Apply</button>
-      </div>
+      </div> */}
     </div>
   )
 }

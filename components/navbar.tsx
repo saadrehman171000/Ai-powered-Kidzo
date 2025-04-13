@@ -86,11 +86,11 @@ export default function Navbar() {
                 Products
               </Link>
             </li>
-            <li className={styles.navItem}>
+            {/* <li className={styles.navItem}>
               <Link href="/orders" className={pathname === "/orders" ? styles.active : ""}>
                 Orders
               </Link>
-            </li>
+            </li> */}
             <li className={styles.navItem}>
               <Link href="/chatbot" className={pathname === "/chatbot" ? styles.active : ""}>
                 Chatbot

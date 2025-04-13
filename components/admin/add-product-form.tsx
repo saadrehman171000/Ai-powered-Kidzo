@@ -102,7 +102,7 @@ export default function AddProductForm({
         <select
           id="category"
           value={formData.category}
-          onChange={(e) => setFormData((prev) => ({ ...prev, category: e.target.value as any }))}
+          onChange={(e) => setFormData((prev) => ({ ...prev, category: e.target.value }))}
           required
         >
           {PRODUCT_CATEGORIES.map((category) => (

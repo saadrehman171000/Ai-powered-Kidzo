@@ -63,7 +63,7 @@ export default function OrdersList({ userId }: OrdersListProps) {
 
   return (
     <>
-      <h1 className={styles.title}>Your Orders</h1>
+      {/* <h1 className={styles.title}>Your Orders</h1> */}
 
       <div className={styles.ordersGrid}>
         {orders.map((order) => (

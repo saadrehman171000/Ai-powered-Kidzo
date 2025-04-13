@@ -150,13 +150,13 @@
   
   .commentTextarea:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: #2f97a9;
   }
   
   .submitButton {
     align-self: flex-start;
     padding: 0.75rem 2rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    background: linear-gradient(135deg, #2f97a9 0%, #006779 100%);
     color: var(--primary-foreground);
     border: none;
     border-radius: 8px;

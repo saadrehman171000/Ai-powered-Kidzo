@@ -85,7 +85,7 @@
 
 .formGroup input:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: #006779;
 }
 
 .formRow {
@@ -119,7 +119,7 @@
 }
 
 .submitButton {
-  background-color: var(--primary);
+  background-color: #2f97a9;
   color: white;
   padding: 1rem;
   border: none;
@@ -131,7 +131,7 @@
 }
 
 .submitButton:hover {
-  background-color: var(--primary-dark);
+  background-color: #006779;
 }
 
 .submitButton:disabled {
@@ -166,7 +166,7 @@
 }
 
 .activeStep .stepNumber {
-  background-color: var(--primary);
+  background-color: #2f97a9;
   color: white;
 }
 
@@ -177,7 +177,7 @@
 }
 
 .activeStep .stepLabel {
-  color: var(--primary);
+  color: #2f97a9;
   font-weight: 600;
 }
 
@@ -195,7 +195,7 @@
 }
 
 .continueButton {
-  background-color: var(--primary);
+  background-color: #2f97a9;
   color: white;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -208,7 +208,7 @@
 }
 
 .continueButton:hover {
-  background-color: var(--primary-dark);
+  background-color: #006779;
 }
 
 .backButton {

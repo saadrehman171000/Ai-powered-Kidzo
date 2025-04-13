@@ -24,6 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
         <div className={styles.rating}>
           {Array.from({ length: 5 }).map((_, i) => (
+           
             <span key={i} className={i < Math.floor(product.rating) ? styles.starFilled : styles.star}>
               ★
             </span>
