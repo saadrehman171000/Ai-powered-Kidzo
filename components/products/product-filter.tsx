@@ -1,5 +1,6 @@
 "use client"
 
+import { PRODUCT_CATEGORIES } from "@/lib/constants"
 import styles from "./product-filter.module.css"
 
 interface ProductFilterProps {
@@ -10,11 +11,10 @@ interface ProductFilterProps {
 export default function ProductFilter({ onCategoryChange, selectedCategory }: ProductFilterProps) {
   const categories = [
     { value: "all", label: "All Products" },
-    { value: "toiletries", label: "Baby Toiletries" },
-    { value: "feeding", label: "Feeding Accessories" },
-    { value: "nests", label: "Carry Nests" },
-    { value: "wearing", label: "Baby Wearing" },
-    { value: "toys", label: "Toys" },
+    ...PRODUCT_CATEGORIES.map(category => ({
+      value: category,
+      label: category
+    }))
   ]
 
   return (

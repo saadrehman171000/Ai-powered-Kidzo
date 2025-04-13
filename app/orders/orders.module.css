@@ -1,232 +1,139 @@
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
   }
   
-  .title {
-    font-size: 2rem;
-    font-weight: 700;
+  .header {
     margin-bottom: 2rem;
-    color: var(--foreground);
   }
   
-  .ordersList {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .message {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+  }
+  
+  .ordersGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
   }
   
   .orderCard {
-    background-color: var(--card);
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   .orderHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
   }
   
-  .orderId {
-    font-size: 1.25rem;
+  .orderHeader h3 {
+    font-size: 1.1rem;
     font-weight: 600;
-    color: var(--foreground);
+    color: var(--text-primary);
   }
   
-  .orderDate {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-    margin-top: 0.25rem;
+  .date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
   }
   
   .orderStatus {
-    display: flex;
-    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: var(--background-primary);
+    border-radius: 6px;
   }
   
-  .status {
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    font-size: 0.875rem;
+  .orderStatus p {
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+  }
+  
+  .orderStatus strong {
+    color: var(--text-primary);
+  }
+  
+  .items {
+    margin: 1rem 0;
+  }
+  
+  .items h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
     font-weight: 500;
   }
   
-  .processing {
-    background-color: #fef3c7;
-    color: #92400e;
-  }
-  
-  .shipped {
-    background-color: #e0f2fe;
-    color: #0369a1;
-  }
-  
-  .delivered {
-    background-color: #dcfce7;
-    color: #166534;
-  }
-  
-  .cancelled {
-    background-color: #fee2e2;
-    color: #b91c1c;
-  }
-  
-  .orderItems {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .orderItem {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .orderItem:last-child {
-    margin-bottom: 0;
-  }
-  
-  .itemImage {
-    flex-shrink: 0;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .itemDetails {
-    flex: 1;
-  }
-  
-  .itemName {
-    font-weight: 600;
-    color: var(--foreground);
-    margin-bottom: 0.25rem;
-  }
-  
-  .itemPrice {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
-  }
-  
-  .orderFooter {
+  .item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
   }
   
   .orderTotal {
-    display: flex;
-    gap: 0.5rem;
-    font-weight: 600;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+    font-size: 1.1rem;
+    color: var(--text-primary);
   }
   
-  .totalAmount {
-    color: var(--primary);
+  .notes {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
   }
   
-  .orderActions {
-    display: flex;
-    gap: 1rem;
+  .notes h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 500;
   }
   
-  .viewDetailsBtn,
-  .downloadInvoiceBtn {
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s;
-    text-decoration: none;
-  }
-  
-  .viewDetailsBtn {
-    background-color: var(--secondary);
-    color: var(--secondary-foreground);
-    border: 1px solid var(--border);
-  }
-  
-  .viewDetailsBtn:hover {
-    background-color: var(--secondary-hover);
-  }
-  
-  .downloadInvoiceBtn {
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    border: none;
-    cursor: pointer;
-  }
-  
-  .downloadInvoiceBtn:hover {
-    background-color: var(--primary-hover);
-  }
-  
-  .notLoggedIn,
-  .noOrders,
-  .loading {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 1rem;
-    text-align: center;
-  }
-  
-  .notLoggedIn h1,
-  .noOrders h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: var(--foreground);
-  }
-  
-  .notLoggedIn p,
-  .noOrders p {
-    color: var(--muted-foreground);
-    margin-bottom: 2rem;
-  }
-  
-  .loginBtn,
-  .shopNowBtn {
-    padding: 0.75rem 2rem;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  
-  .loginBtn:hover,
-  .shopNowBtn:hover {
-    background-color: var(--primary-hover);
-  }
-  
-  .loading {
-    font-size: 1.2rem;
-    color: var(--muted-foreground);
+  .notes p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
   
   @media (max-width: 768px) {
-    .orderHeader,
-    .orderFooter {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1rem;
+    .ordersGrid {
+      grid-template-columns: 1fr;
     }
   
-    .orderActions {
-      width: 100%;
+    .container {
+      padding: 1rem;
     }
   
-    .viewDetailsBtn,
-    .downloadInvoiceBtn {
-      flex: 1;
-      text-align: center;
+    .header h1 {
+      font-size: 1.75rem;
     }
   }
   

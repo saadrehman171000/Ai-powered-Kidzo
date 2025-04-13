@@ -29,7 +29,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       try {
         setUser(JSON.parse(savedUser))
       } catch (error) {
-        console.error("Failed to parse user from localStorage:", error)
+        localStorage.removeItem("user")
       }
     }
     setIsLoading(false)
@@ -53,7 +53,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("user", JSON.stringify(mockUser))
       return true
     } catch (error) {
-      console.error("Login failed:", error)
       return false
     } finally {
       setIsLoading(false)
@@ -78,7 +77,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem("user", JSON.stringify(mockUser))
       return true
     } catch (error) {
-      console.error("Registration failed:", error)
       return false
     } finally {
       setIsLoading(false)

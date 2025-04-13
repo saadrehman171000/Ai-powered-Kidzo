@@ -5,7 +5,7 @@ import ProductCard from "@/components/products/product-card"
 import ProductFilter from "@/components/products/product-filter"
 import SearchBar from "@/components/products/search-bar"
 import SortOptions from "@/components/products/sort-options"
-import { getAllProducts } from "@/lib/api"
+import { getProducts } from "@/app/actions/products"
 import type { Product } from "@/types"
 import styles from "./products.module.css"
 
@@ -20,7 +20,7 @@ export default function ProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await getAllProducts()
+        const data = await getProducts()
         setProducts(data)
         setFilteredProducts(data)
         setIsLoading(false)
@@ -50,12 +50,12 @@ export default function ProductsPage() {
     }
 
     // Apply sorting
-    if (sortOption === "best-selling") {
-      result.sort((a, b) => b.salesCount - a.salesCount)
-    } else if (sortOption === "price-low-high") {
+    if (sortOption === "price-low-high") {
       result.sort((a, b) => a.price - b.price)
-    } else if (sortOption === "new-arrivals") {
-      result.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+    } else if (sortOption === "price-high-low") {
+      result.sort((a, b) => b.price - a.price)
+    } else if (sortOption === "rating") {
+      result.sort((a, b) => (b.rating || 0) - (a.rating || 0))
     }
 
     setFilteredProducts(result)

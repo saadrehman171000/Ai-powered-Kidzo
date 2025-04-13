@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useParams } from "next/navigation"
-import { getProductById } from "@/lib/api"
+import { getProduct } from "@/app/actions/products"
 import type { Product } from "@/types"
 import { useCart } from "@/context/cart-context"
 import ReviewSection from "@/components/products/review-section"
@@ -16,16 +15,25 @@ export default function ProductDetailsPage() {
   const [product, setProduct] = useState<Product | null>(null)
   const [quantity, setQuantity] = useState(1)
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
   const { addToCart } = useCart()
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await getProductById(id as string)
+        if (typeof id !== 'string') {
+          throw new Error('Invalid product ID')
+        }
+        const data = await getProduct(id)
+        if (!data) {
+          throw new Error('Product not found')
+        }
         setProduct(data)
-        setIsLoading(false)
+        setError(null)
       } catch (error) {
         console.error("Error fetching product:", error)
+        setError(error instanceof Error ? error.message : 'Failed to load product')
+      } finally {
         setIsLoading(false)
       }
     }
@@ -60,8 +68,13 @@ export default function ProductDetailsPage() {
     return <div className={styles.loading}>Loading product details...</div>
   }
 
-  if (!product) {
-    return <div className={styles.error}>Product not found</div>
+  if (error || !product) {
+    return (
+      <div className={styles.error}>
+        <h2>Error</h2>
+        <p>{error || 'Product not found'}</p>
+      </div>
+    )
   }
 
   return (
@@ -69,7 +82,7 @@ export default function ProductDetailsPage() {
       <div className={styles.productDetails}>
         <div className={styles.imageContainer}>
           <Image
-            src={product.imageUrl || "/placeholder.svg"}
+            src={product.imageUrl || "/placeholder.png"}
             alt={product.name}
             width={500}
             height={500}
@@ -82,7 +95,7 @@ export default function ProductDetailsPage() {
 
           <div className={styles.rating}>
             {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i} className={i < product.rating ? styles.starFilled : styles.star}>
+              <span key={i} className={i < (product.rating || 0) ? styles.starFilled : styles.star}>
                 ★
               </span>
             ))}
@@ -103,7 +116,11 @@ export default function ProductDetailsPage() {
 
           <div className={styles.actions}>
             <div className={styles.quantityContainer}>
-              <button className={styles.quantityBtn} onClick={() => quantity > 1 && setQuantity(quantity - 1)}>
+              <button 
+                className={styles.quantityBtn} 
+                onClick={() => quantity > 1 && setQuantity(quantity - 1)}
+                disabled={!product.inStock}
+              >
                 -
               </button>
               <input
@@ -112,8 +129,13 @@ export default function ProductDetailsPage() {
                 value={quantity}
                 onChange={handleQuantityChange}
                 className={styles.quantityInput}
+                disabled={!product.inStock}
               />
-              <button className={styles.quantityBtn} onClick={() => setQuantity(quantity + 1)}>
+              <button 
+                className={styles.quantityBtn} 
+                onClick={() => setQuantity(quantity + 1)}
+                disabled={!product.inStock}
+              >
                 +
               </button>
             </div>
@@ -129,7 +151,10 @@ export default function ProductDetailsPage() {
         </div>
       </div>
 
-      <ReviewSection productId={product.id} reviews={product.reviews || []} />
+      <ReviewSection 
+        productId={product.id} 
+        reviews={(product as any).reviews ?? []} 
+      />
     </div>
   )
 }

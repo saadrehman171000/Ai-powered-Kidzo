@@ -1,0 +1,121 @@
+.tableContainer {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--card);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.table th {
+  font-weight: 600;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  user-select: none;
+}
+
+.table th:hover {
+  color: var(--foreground);
+}
+
+.imageCell {
+  width: 50px;
+  height: 50px;
+}
+
+.productImage {
+  border-radius: 0.25rem;
+  object-fit: cover;
+}
+
+.stockBadge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.inStock {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.outOfStock {
+  background-color: var(--destructive-light);
+  color: var(--destructive);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.actionButton:hover {
+  background-color: var(--accent-hover);
+}
+
+.deleteButton {
+  background-color: var(--destructive-light);
+  color: var(--destructive);
+}
+
+.deleteButton:hover {
+  background-color: var(--destructive);
+  color: white;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
