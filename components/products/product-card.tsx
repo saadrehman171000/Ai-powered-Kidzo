@@ -32,7 +32,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className={styles.reviewCount}>({product.reviewCount})</span>
         </div>
 
-        <div className={styles.price}>${product.price.toFixed(2)}</div>
+        <div className={styles.price}>PKR {product.price.toFixed(2)}</div>
       </div>
     </Link>
   )

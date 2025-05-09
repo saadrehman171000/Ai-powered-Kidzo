@@ -79,7 +79,7 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <div className={styles.priceCol}>${item.price.toFixed(2)}</div>
+              <div className={styles.priceCol}>PKR {item.price.toFixed(2)}</div>
 
               <div className={styles.quantityCol}>
                 <div className={styles.quantityControl}>
@@ -99,7 +99,7 @@ export default function CartPage() {
                 </div>
               </div>
 
-              <div className={styles.totalCol}>${(item.price * item.quantity).toFixed(2)}</div>
+              <div className={styles.totalCol}>PKR {(item.price * item.quantity).toFixed(2)}</div>
 
               <div className={styles.actionCol}>
                 <button className={styles.removeBtn} onClick={() => handleRemove(item.id)}>
@@ -115,7 +115,7 @@ export default function CartPage() {
 
           <div className={styles.summaryRow}>
             <span>Subtotal</span>
-            <span>${subtotal.toFixed(2)}</span>
+            <span>PKR {subtotal.toFixed(2)}</span>
           </div>
 
           <div className={styles.summaryRow}>
@@ -129,7 +129,7 @@ export default function CartPage() {
 
           <div className={styles.summaryTotal}>
             <span>Total</span>
-            <span>${total.toFixed(2)}</span>
+            <span>PKR {total.toFixed(2)}</span>
           </div>
 
           <Link href="/checkout" className={styles.checkoutBtn}>

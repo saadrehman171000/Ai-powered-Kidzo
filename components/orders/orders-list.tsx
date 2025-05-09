@@ -93,13 +93,13 @@ export default function OrdersList({ userId }: OrdersListProps) {
                   <span>
                     {item.product.name} × {item.quantity}
                   </span>
-                  <span>${(item.price * item.quantity).toFixed(2)}</span>
+                  <span>PKR {(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
             </div>
 
             <div className={styles.orderTotal}>
-              Total: ${order.totalAmount.toFixed(2)}
+              Total: PKR {order.totalAmount.toFixed(2)}
             </div>
           </div>
         ))}

@@ -81,7 +81,7 @@ export default function ProductTable({ products, onDelete, onUpdate }: ProductTa
               </td>
               <td>{product.name}</td>
               <td>{product.description}</td>
-              <td>${product.price.toFixed(2)}</td>
+              <td>PKR {product.price.toFixed(2)}</td>
               <td>{product.category}</td>
               <td>
                 <span className={`${styles.stockBadge} ${product.inStock ? styles.inStock : styles.outOfStock}`}>

@@ -102,7 +102,7 @@ export default function ProductDetailsPage() {
             <span className={styles.reviewCount}>({product.reviewCount} reviews)</span>
           </div>
 
-          <div className={styles.price}>${product.price.toFixed(2)}</div>
+          <div className={styles.price}>PKR {product.price.toFixed(2)}</div>
 
           <div className={styles.availability}>
             {product.inStock ? (

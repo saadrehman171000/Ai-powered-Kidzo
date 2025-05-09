@@ -44,7 +44,7 @@ export default async function AdminDashboard() {
           <div className={styles.statIcon}>💰</div>
           <div className={styles.statContent}>
             <h3>Total Revenue</h3>
-            <div className={styles.value}>${stats.totalRevenue.toFixed(2)}</div>
+            <div className={styles.value}>PKR {stats.totalRevenue.toFixed(2)}</div>
             <p className={styles.statDescription}>Revenue generated</p>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default async function AdminDashboard() {
                 <span className={styles.orderId}>Order #{order.id.slice(-8)}</span>
                 <span className={styles.customer}>{order.customer.name}</span>
               </div>
-              <span className={styles.orderAmount}>${order.totalAmount.toFixed(2)}</span>
+              <span className={styles.orderAmount}>PKR {order.totalAmount.toFixed(2)}</span>
             </div>
           ))}
         </div>

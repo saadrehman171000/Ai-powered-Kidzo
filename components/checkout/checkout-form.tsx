@@ -522,12 +522,12 @@ export default function CheckoutForm({ userId }: CheckoutFormProps) {
                     <span>
                       {item.name} × {item.quantity}
                     </span>
-                    <span>${(item.price * item.quantity).toFixed(2)}</span>
+                    <span>PKR {(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
                 <div className={styles.summaryItem}>
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>PKR {subtotal.toFixed(2)}</span>
                 </div>
                 <div className={styles.summaryItem}>
                   <span>Shipping</span>
@@ -535,11 +535,11 @@ export default function CheckoutForm({ userId }: CheckoutFormProps) {
                 </div>
                 <div className={styles.summaryItem}>
                   <span>Tax (8%)</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>PKR {tax.toFixed(2)}</span>
                 </div>
                 <div className={styles.summaryTotal}>
                   <strong>Total:</strong>
-                  <strong>${total.toFixed(2)}</strong>
+                  <strong>PKR {total.toFixed(2)}</strong>
                 </div>
               </div>
             </div>

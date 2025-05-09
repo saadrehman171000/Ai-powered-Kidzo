@@ -107,7 +107,7 @@ export default function OrdersPage() {
                   <span className={styles.itemName}>{item.product.name}</span>
                   <div className={styles.itemDetails}>
                     <span className={styles.itemQuantity}>x{item.quantity}</span>
-                    <span className={styles.itemPrice}>${(item.product.price * item.quantity).toFixed(2)}</span>
+                    <span className={styles.itemPrice}>PKR {(item.product.price * item.quantity).toFixed(2)}</span>
                   </div>
                 </div>
               ))}
@@ -116,7 +116,7 @@ export default function OrdersPage() {
             <div className={styles.orderDetails}>
               <div className={styles.totalAmount}>
                 <span>Total:</span>
-                <span>${order.totalAmount.toFixed(2)}</span>
+                <span>PKR {order.totalAmount.toFixed(2)}</span>
               </div>
 
               <div className={styles.statusContainer}>
